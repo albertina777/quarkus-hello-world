@@ -4,6 +4,9 @@ ENV LANGUAGE='en_US:en'
 
 
 # We make four distinct layers so if there are application changes the library layers can be re-used
+
+CMD ["/bin/bash", "-c", "ls -lah; whoami; hostname"]
+
 COPY --chown=185 target/lib/ /deployments/lib/
 COPY --chown=185 target/*-runner.jar /deployments/quarkus-run.jar
 
